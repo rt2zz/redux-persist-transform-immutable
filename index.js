@@ -1,10 +1,16 @@
-var transit = require('transit-immutable-js');
+var transit = require('transit-immutable-js')
 
 module.exports = {
   in: function(state){
-    return transit.toJSON(state)
+    if(typeof state === 'object'){
+      return transit.toJSON(state)
+    }
+    return state
   },
-  out: function(state){
-    return transit.fromJSON(state)
+  out: function(raw){
+    if(typeof raw === 'string'){
+      return transit.fromJSON(raw)
+    }
+    return raw
   }
 }
