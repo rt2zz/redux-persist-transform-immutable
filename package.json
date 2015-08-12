@@ -1,0 +1,20 @@
+{
+  "name": "redux-persist-immutable",
+  "version": "1.0.0",
+  "description": "immutable.js transform for redux-persist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "immutable": ">= 3",
+    "transit-js": ">= 0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rt2zz/redux-persist-immutable.git"
+  },
+  "homepage": "https://github.com/rt2zz/redux-persist-immutable",
+  "author": "rt2zz <zack@root-two.com>",
+  "license": "MIT"
+}
