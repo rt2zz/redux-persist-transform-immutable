@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "immutable": ">= 3",
-    "transit-js": ">= 0.8"
+    "transit-js": ">= 0.8",
+    "transit-immutable-js": ">= 0.2"
   },
   "repository": {
     "type": "git",
