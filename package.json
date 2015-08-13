@@ -1,6 +1,6 @@
 {
   "name": "redux-persist-immutable",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "immutable.js transform for redux-persist",
   "main": "index.js",
   "scripts": {
