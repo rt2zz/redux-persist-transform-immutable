@@ -8,7 +8,6 @@ module.exports = {
     return state
   },
   out: function(raw){
-    console.log('out', raw)
     if(typeof raw === 'string'){
       return transit.fromJSON(raw)
     }
