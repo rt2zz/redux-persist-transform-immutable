@@ -1,5 +1,7 @@
 ## Redux Persist Immutable
-Add immutable support to redux-persist
+Add immutable support to redux-persist.
+
+**Note:** redux-persist-immutable works with nested immutable data at the reducer level. It does **not** if the entire state atom is one immutable map.
 
 ### Usage
 ```js
