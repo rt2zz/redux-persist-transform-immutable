@@ -9,7 +9,7 @@
   "dependencies": {
     "immutable": ">= 3",
     "transit-js": ">= 0.8",
-    "transit-immutable-js": ">= 0.2"
+    "transit-immutable-js": ">= 0.5"
   },
   "peerDependencies": {
     "redux-persist": ">=3.0.0"
