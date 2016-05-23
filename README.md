@@ -39,3 +39,35 @@ persistStore(
 )
 
 ```
+
+### Avoiding conflicts with non-Immutable objects
+
+By default, `redux-persist-immutable-transform` will attempt to serialize and deserialize *all* passed objects using `transit-immutable-js`. This can pose a problem if you are also using, for example, plain string objects in your state, because the deserialization will see a regular (non-JSON) string and try to parse it into an object, but will fail. You can utilize the `config` object passed to the constructor to either whitelist or blacklist entries that should or should not be treated by the transformer.
+
+Example state object:
+
+```js
+state = {
+  username: 'john',
+  imageUri: 'images/profilePic.png',
+  friends: Immutable.List([ ... ])
+}
+```
+
+Set up the transformer to ignore the string-based state properties:
+
+```js
+persistStore(store, {
+  transforms: [immutableTransform({
+    blacklist: ['username', 'imageUri']
+  })]
+})
+
+/* OR */
+
+persistStore(store, {
+  transforms: [immutableTransform({
+    whitelist: ['friends']
+  })]
+})
+```
