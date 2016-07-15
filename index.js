@@ -3,7 +3,7 @@ var reduxPersist = require('redux-persist')
 
 module.exports = function (config) {
   var transitInstance = transit
-  if (config.records) {
+  if (config && config.records) {
     transitInstance = transit.withRecords(config.records)
   }
 
