@@ -3,7 +3,7 @@ var reduxPersist = require('redux-persist')
 
 module.exports = function (config) {
   config = config || {}
-  
+
   var transitInstance = transit
   if (config.records) {
     transitInstance = transit.withRecords(config.records)
@@ -11,16 +11,10 @@ module.exports = function (config) {
 
   return reduxPersist.createTransform(
     function(state){
-      if(state && typeof state === 'object'){
-        return transitInstance.toJSON(state)
-      }
-      return state
+      return transitInstance.toJSON(state)
     },
     function(raw){
-      if(typeof raw === 'string'){
-        return transitInstance.fromJSON(raw)
-      }
-      return raw
+      return transitInstance.fromJSON(raw)
     },
     config
   )
