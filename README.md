@@ -40,7 +40,7 @@ persistStore(
 
 ```
 
-### Avoiding conflicts with non-Immutable objects
+### Avoiding Unnecessary Serialization
 
 By default, `redux-persist-immutable-transform` will serialize and deserialize *all* passed objects using `transit-immutable-js`. If you are concerned about performance, you can either whitelist or blacklist reducer that you know are not immutable.
 
