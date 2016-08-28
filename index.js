@@ -2,6 +2,8 @@ var transit = require('transit-immutable-js')
 var reduxPersist = require('redux-persist')
 
 module.exports = function (config) {
+  config = config || {}
+  
   var transitInstance = transit
   if (config && config.records) {
     transitInstance = transit.withRecords(config.records)
