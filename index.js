@@ -5,7 +5,7 @@ module.exports = function (config) {
   config = config || {}
   
   var transitInstance = transit
-  if (config && config.records) {
+  if (config.records) {
     transitInstance = transit.withRecords(config.records)
   }
 
