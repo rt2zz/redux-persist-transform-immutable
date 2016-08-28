@@ -4,7 +4,7 @@
   "description": "immutable.js transform for redux-persist",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"no test specified\" && exit 0"
   },
   "dependencies": {
     "immutable": ">= 3",
