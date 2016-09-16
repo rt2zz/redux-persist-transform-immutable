@@ -1,5 +1,7 @@
 ## Redux Persist Transform Immutable
-Add immutable support to redux-persist. **NOTE** this handles immutable state on a per-reducer basis, but does not provide support for top level immutable state.
+Add immutable sub-reducer support to redux-persist.  
+
+**NOTE** this handles immutable state on a per-reducer basis. If your top level state is an Immutabel Map, use [redux-persist-immutable](https://github.com/rt2zz/redux-persist-immutable)
 
 ### Usage
 ```js
