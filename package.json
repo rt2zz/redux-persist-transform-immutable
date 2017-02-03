@@ -12,7 +12,7 @@
     "transit-immutable-js": ">= 0.5"
   },
   "peerDependencies": {
-    "redux-persist": ">=4.0.0"
+    "redux-persist": "^4.0.0"
   },
   "repository": {
     "type": "git",
