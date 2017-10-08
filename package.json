@@ -7,8 +7,7 @@
     "test": "echo \"no test specified\" && exit 0"
   },
   "dependencies": {
-    "transit-immutable-js": "^0.7.0",
-    "transit-js": "^0.8.846"
+    "remotedev-serialize": "^0.1.0"
   },
   "peerDependencies": {
     "redux-persist": "^4.0.0",
