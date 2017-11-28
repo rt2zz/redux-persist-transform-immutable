@@ -1,9 +1,28 @@
 ## Redux Persist Transform Immutable
-Add immutable sub-reducer support to redux-persist.  
+Add immutable sub-reducer support to redux-persist.
 
 **NOTE** this handles immutable state on a per-reducer basis. If your top level state is an Immutable Map, use [redux-persist-immutable](https://github.com/rt2zz/redux-persist-immutable)
 
-### Usage
+### Usage with Redux Persist v5 (latest)
+```js
+import { createStore, combineReducers } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import immutableTransform from 'redux-persist-transform-immutable'
+
+const persistConfig = {
+  transforms: [immutableTransform()],
+  key: 'root',
+  storage
+}
+
+const reducer = combineReducers(reducers)
+const persistedReducer = persistReducer(persistConfig, reducer)
+const store = createStore(persistedReducer)
+
+persistStore(store)
+```
+
+### Usage with Redux Persist v4
 ```js
 import { compose } from 'redux'
 import { persistStore, autoRehydrate } from 'redux-persist'
@@ -34,7 +53,7 @@ const store = compose(autoRehydrate(), createStore)(reducer)
 
 const MyRecord = Record({
   foo: 'null'
-}, 'MyRecord') // <- Be sure to add a name field to your record 
+}, 'MyRecord') // <- Be sure to add a name field to your record
 
 persistStore(
   store,
