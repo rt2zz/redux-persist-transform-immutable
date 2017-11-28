@@ -14,6 +14,9 @@ const store = compose(autoRehydrate(), createStore)(reducer)
 persistStore(store, {transforms: [immutableTransform()]})
 ```
 
+#### Config
+For config, please refer to [redux-persist's docs](https://github.com/rt2zz/redux-persist/blob/master/docs/api.md#type-persistconfig).
+
 ### Usage with Records
 By default, immutable [`Record`s](https://facebook.github.io/immutable-js/docs/#/Record) will be persisted and restored as `Map`s, because the library has no way of knowing what your `Record` constructor looks like. To change this behavior and allow a `Record` to be persisted and restored as a `Record` instance, you'll need to do two things:
 
