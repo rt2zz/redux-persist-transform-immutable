@@ -1,9 +1,12 @@
-## Redux Persist Transform Immutable
+# Redux Persist Transform Immutable
 Add immutable sub-reducer support to redux-persist.
 
-**NOTE** this handles immutable state on a per-reducer basis. If your top level state is an Immutable Map, use [redux-persist-immutable](https://github.com/rt2zz/redux-persist-immutable)
+**NOTE** this handles immutable state on a per-reducer basis. If your top level state is an immutable map, this module will not work.
 
-### Usage with Redux Persist v5 (latest)
+## Breaking Change
+v5 changes from `transitjs` to `remotedev-serialize`. For existing projects that upgrade to v5, all persisted data will be lost upon the initial persist. **note** It is possible to write an upgrade via a custom transform that supports both formats - if you do write one please PR!
+
+### Usage with Redux Persist
 ```js
 import { createStore, combineReducers } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
@@ -20,17 +23,6 @@ const persistedReducer = persistReducer(persistConfig, reducer)
 const store = createStore(persistedReducer)
 
 persistStore(store)
-```
-
-### Usage with Redux Persist v4
-```js
-import { compose } from 'redux'
-import { persistStore, autoRehydrate } from 'redux-persist'
-import immutableTransform from 'redux-persist-transform-immutable'
-const reducer = combineReducers(reducers)
-const store = compose(autoRehydrate(), createStore)(reducer)
-
-persistStore(store, {transforms: [immutableTransform()]})
 ```
 
 #### Config
