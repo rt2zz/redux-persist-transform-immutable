@@ -10,7 +10,7 @@
     "remotedev-serialize": "^0.1.0"
   },
   "peerDependencies": {
-    "redux-persist": "^4.0.0",
+    "redux-persist": ">= 4.0.0",
     "immutable": ">= 3"
   },
   "repository": {
